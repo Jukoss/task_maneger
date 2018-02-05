@@ -1,0 +1,115 @@
+.new-task-wrp {
+  // background-color: #FFC773;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  min-height: calc(100vh - 130px);
+  padding: 15px;
+  grid-auto-rows: min-content;
+  max-width: 1024px;
+  margin:  0 auto;
+
+  .past-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 25px;
+  }
+
+  .img-wrp {
+    position: relative;
+    .img {
+      margin: 30px auto 0;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background-color: #FFB340;
+      position: relative;
+
+      button {
+        padding: 2rem;
+        background: #fff;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+        border: none;
+        z-index: 1;
+        background-image: url('../../img/upload-img.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2rem;
+      }
+      .deleteImage {
+        position: absolute;
+      }
+      .uploadPicturesWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+
+        & > div {
+          height: 100%;
+        }
+
+        .uploadPictureContainer {
+          width: 100%;
+          height: 100%;
+        }
+        
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+       
+      }
+      .errorsContainer {
+        z-index: 3;
+        position: absolute;
+        top: 100%;
+        color: #689AD3;
+      }
+
+      svg {
+        position: absolute;
+        width: 2rem;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+
+
+  input[type="file"] {
+    display: none;
+  }
+
+  button {
+    float: right;
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 768px) { }
+
+@media (max-width: 600px) { 
+  .new-task-wrp {
+    grid-template-columns: 1fr;
+    padding: 5px;
+
+    .past-form {
+      grid-gap: 10px;
+    }
+    button {
+      float: none;
+      margin-bottom: 2rem;
+    }
+  }
+}

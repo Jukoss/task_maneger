@@ -1,0 +1,28 @@
+.textarea {
+  font-family: LatoBold;
+  color:  #04356C;
+  font-size: rem(30px);
+  line-height: rem(24px);
+  border: none;
+  border-bottom: 1px solid #04356C;
+  width: 100%;
+  display: inline-block;
+  outline: none;
+  height: 5rem;
+  resize: none;
+  background: transparent;
+  margin-top: 2rem;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color:  #04356C;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color:  #04356C;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color:  #04356C;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color:  #04356C;
+  }
+
+}

@@ -1,0 +1,65 @@
+$baseFontSize : 16px;
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+
+.input {
+  position: relative;
+  display: block;
+  margin-top: 3rem;
+
+  span {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: rem(11px);
+    transition: .2s;
+    color:  #04356c;
+    font-size: rem(20px);
+    cursor: text;
+    font-family: LatoRegular;
+  }
+  .is-value {
+    bottom: rem(40px);
+    left: 0;
+  }
+  .has-error{
+    border-bottom: 1px solid #ff0000;
+  }
+  input {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #04356c;
+    transition: border-bottom .2s;
+    border-radius: 0;
+    color:  #0b1b2c;
+    font-size: rem(16px);
+    font-family: LatoRegular;
+    padding: rem(12px) 0;
+    &:disabled {
+      color: #7e858c;
+      border-color: #7e858c;
+    }
+    &:focus {
+      outline: none;
+      // border-bottom: 1px solid gold;
+      transition: border-bottom 200ms;
+      + span {
+        @extend .is-value;
+      }
+    }
+  }
+  input[type="password"] {
+    letter-spacing: 7px;
+  }
+}

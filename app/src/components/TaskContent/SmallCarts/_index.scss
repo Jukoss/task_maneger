@@ -1,0 +1,122 @@
+
+
+.tasks-small-carts {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease-out all;
+
+  &:before {
+    content: "";
+    padding-top: 100%;
+    float: left;
+  }
+
+  &:hover {
+    background-color: rgba(47, 50, 56, 0.9) !important;
+    .helper-move {
+      opacity: 1;
+      
+      button {
+        height: 30px;
+      }
+      
+    }
+
+    
+    .task-title {
+      color: #fff;
+    }
+
+    ul {
+      opacity: 0;
+    }
+  }
+
+  .helper-move {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease-out all;
+    
+
+    button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      color: #fff;
+      height: 0;
+      transition: 0.5s ease-out all;
+
+      &:hover {
+        
+      }
+    }
+  }
+
+  .task-title {
+    color: #04356C;
+    text-align: center;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    height: calc(100% - 30px);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.3s ease-out all;
+
+    span {
+      padding: 0 15px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%); 
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    color: #04356C;
+    line-height: 30px;
+    border-top: 1px solid #04356C;
+    opacity: 1;
+    transition: 0.3s ease-out all;
+    li {
+      width: calc((100% - 1px) / 2);
+      text-align: center;
+      float: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 5px;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        border-right: 1px solid #04356C;
+      }
+
+      &.status {
+        color: #3d454c;
+        
+        &-low {
+          color: #559;
+          background-color: #D2EAFA;
+        }
+        &-high {
+          color: #900;
+          background-color: #fcc;
+        }
+      }
+    }
+  }
+}
