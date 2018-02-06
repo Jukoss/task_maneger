@@ -23,7 +23,7 @@ class AddNewTask extends Component {
       },
       projects: ['Project One', 'Project Second'],
       fireRedirect: false,
-      pictures: []
+      pictures: {}
     }
 
     this.onDrop = this.onDrop.bind(this);
@@ -32,7 +32,7 @@ class AddNewTask extends Component {
 
   onDrop(picture) {
     this.setState({
-        pictures: this.state.pictures.concat(picture),
+        pictures: picture[0],
     });
 }
 
@@ -55,7 +55,6 @@ class AddNewTask extends Component {
 
     let newTask = {};
 
-    var formData = new FormData();
 
     newTask = this.state.task;
     newTask.id = +(new Date()); 
@@ -176,9 +175,9 @@ class AddNewTask extends Component {
         </div>
       </form>
 
-      {/* {this.state.fireRedirect && (
+      {this.state.fireRedirect && (
           <Redirect to={'/'}/>
-        )} */}
+        )}
           
  
     </div>

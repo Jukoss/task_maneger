@@ -26,7 +26,9 @@ class Reset extends Component {
     return (
       <Fragment>
         <Header/>
-        <Link to="/">T<span>ask</span>M<span>aneger 0.1.0</span></Link>
+          <div className="main">
+            <Link to="/">T<span>ask</span>M<span>aneger 0.1.0</span></Link>
+          </div>
         <Footer/>
       </Fragment>
     );

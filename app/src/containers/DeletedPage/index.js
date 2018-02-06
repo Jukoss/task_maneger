@@ -11,22 +11,14 @@ class Reset extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      projects: []
-    }
   }
 
-  componentDidMount() {
-    fetch('/tasks')
-      .then(res => res.json())
-      .then(projects => this.setState({ projects }));
-  }
 
   render() {
     return (
       <Fragment>
         <Header/>
-        <TaskManagerDeleted events={this.state.projects}/>
+        <TaskManagerDeleted/>
         <Footer/>
       </Fragment>
     );

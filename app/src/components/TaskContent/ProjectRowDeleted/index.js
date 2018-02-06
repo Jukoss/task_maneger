@@ -26,6 +26,8 @@ class ProjectRowDeleted extends Component {
             estimate={i.estimate}
             nextStep="New"
             id={i.id}
+            status={i.status}
+            update = {this.props.update}
           />
         )
       } 
