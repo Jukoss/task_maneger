@@ -12,12 +12,16 @@
 
 1. cd react-backend
 
-2. PORT=3001 node bin/www
+2. yarn install
+
+3. PORT=3001 node bin/www
 
 
 ### Start app
 
 1. cd app
 
-2. yarn start
+2. yarn install
+
+3. yarn start
 
